@@ -1,14 +1,14 @@
 package com.sample.ds.queue;
 
 import com.sample.ds.domain.Queue;
-import org.apache.commons.lang.ArrayUtils;
+//import org.apache.commons.lang.ArrayUtils;
 
 /**
  * QueueService will support the queue base function like adding/deleting/diaplaying items to the queue. 
  * @author Prajesh kunimal
  *
  */
-public class QueueService {
+public class QueueService {}/*{
 	
 	
 	
@@ -99,4 +99,4 @@ public class QueueService {
 		}
 		return false;
 	}
-}
+}*/
