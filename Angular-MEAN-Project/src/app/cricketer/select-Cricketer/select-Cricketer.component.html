@@ -1,0 +1,99 @@
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+
+    <!-- Call the controller & output the data.
+  <input name="cricketerName" type="text" [value]="criketer">
+  <br>
+  <button name="selectCricker" (click)="onAddCricketerCallCompontentFromUI()">select Cricker</button>  -->
+
+  <!--Approach to pass the user data by using the reference option (#criketerVal - option 1)
+  <input name="cricketerName" type="text" [value]="criketer" #criketerVal>
+ <br>
+  <button name="selectCricker" (click)="onAddCricketerbyRef(criketerVal)">select Cricker</button>  -->
+
+
+   <!-- 2 WAY IMPLEMENTATION :
+    <input name="cricketerName" type="text" [(ngModel)]="enteredVal">
+  <button
+      mat-raised-button
+      color='primary'
+      (click)="onAddCricketerBytwoWay()">select Cricker</button>
+    -->
+    <!-- IMPLEMENTATION TO PASS THE DATA FROM 1 COMPONENT TO ANOTHER BY USING THE PROPERTY(2 way and property binding) AND EVENT BINDING.
+  <mat-card>
+      <mat-form-field>
+         <input matInput  placeholder="CRICKETER NAME" type="text" [(ngModel)]="cricketerName">
+      </mat-form-field>
+     <br>
+       <mat-form-field>
+         <textarea matInput rows='3' placeholder="reason for selection" type="textarea" [(ngModel)]="selected4reason"></textarea>
+      </mat-form-field>
+  <br>
+
+    <button
+      mat-raised-button
+      color='primary'
+      (click)="onAddCricketerBytwoWay2()">select Cricker</button>
+
+</mat-card>
+
+
+  <p>{{criketer}}</p> -->
+
+    <!-- <--IMPLEMENTATION the same logic ( enter and displaying the other component) but this time using the Model (Cricketer) , So the only change is the method name(onAddCricketerByModel) in type script-->
+    <!--<mat-card>
+
+      <mat-form-field>
+         <input matInput  placeholder="CRICKETER NAME" type="text" [(ngModel)]="cricketerName">
+      </mat-form-field>
+     <br>
+       <mat-form-field>
+         <textarea matInput rows='3' placeholder="reason for selection" type="textarea" [(ngModel)]="selected4reason"></textarea>
+      </mat-form-field>
+  <br>
+
+    <button
+      mat-raised-button
+      color='primary'
+      (click)="onAddCricketerByModel()">select Cricker</button>
+
+</mat-card> -->
+
+ <!-- IMPLEMENTATION the same logic with "form" along with the Model (Cricketer) , So the only change si the method name(onAddCricketerByModel) in type script-->
+ <mat-card>
+
+  <form name="cickform" (submit)="onAddCricketerByModelFormService(ngCrickformval)" #ngCrickformval=ngForm>
+    <mat-form-field>
+       <input matInput  placeholder="CRICKETER NAME" type="text"
+       name="cricketerName"
+       ngModel
+       #cricketerName="ngModel"
+       required>
+    </mat-form-field>
+   <br>
+     <mat-form-field>
+       <textarea matInput rows='3' placeholder="reason for selection" type="textarea"
+       name="selected4reason"
+       ngModel
+       #selected4reason="ngModel"
+       required></textarea>
+    </mat-form-field>
+<br>
+
+  <button
+    mat-raised-button
+    color='primary'
+     type="submit">select Cricker</button>
+  </form>
+</mat-card>
+
+  <p>{{criketer}}</p>
+
+</body>
+</html>
+
+

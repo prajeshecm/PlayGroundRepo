@@ -1,0 +1,13 @@
+<mat-accordion  (onload)="getSelectedCricketerListByService()"   *ngIf = "cricketersList.length > 0">
+    <mat-expansion-panel *ngFor = "let selectedCricketerVarVar of cricketersList">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{selectedCricketerVarVar.cricketerName}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{selectedCricketerVarVar.selected4reason}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      </mat-expansion-panel>
+      </mat-accordion>
+      <P class='info-text mat-body-2'    *ngIf = "cricketersList.length == 0 ">No Player is selected yet.</P>
